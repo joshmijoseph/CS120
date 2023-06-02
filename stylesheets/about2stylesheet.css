@@ -2,5 +2,5 @@ title{font-family: montserrat, sans-serif; color:#000000}
 body{font-family: montserrat, sans-serif; color:#000000}
 h1 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margin-bottom: 30px;}
 h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margin-bottom: 30px;}
-ol {border-style: solid; padding-right: 5px; class="center";}
+ol {border-style: solid; class="center"; width: 25%;}
 tr:nth-child(even) {background-color: #c5c5c5;}
