@@ -5,6 +5,6 @@ h1, h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margi
     margin-left: auto;
     margin-right: auto;
 }
-ol {border-style: solid; width: 10%; class="center"}
+ol {border-style: solid; width: 10%}
 tr:nth-child(even) {background-color: #c5c5c5;}
 
