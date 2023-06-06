@@ -6,6 +6,23 @@ h1, h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margi
     align-items: center;
 }
 
+.food-container {
+  display: flex;
+  align-items: center;
+}
+
+.favorite-food-image {
+  width: 50%;
+  height: 200px;
+  background-image: url('docs/assets/Bagels and Lox.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.explanatory-text {
+  margin-left: 20px; 
+}
+
 .center {
   display: flex;
   justify-content: center;
