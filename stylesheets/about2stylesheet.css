@@ -40,3 +40,12 @@ input[type="text"],
 select {
   width: 100px;
 }
+
+#facebook-icon,
+#twitter-icon {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  font-size: 24px; 
+  color: #black;
+}
