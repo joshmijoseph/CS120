@@ -48,4 +48,6 @@ select {
   right: 30px;
   font-size: 24px; 
   color: #black;
+  display: inline-block;
+  margin-right: 10px;
 }
