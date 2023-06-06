@@ -8,3 +8,18 @@ h1, h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margi
 ol {border-style: solid; width: 10%}
 tr:nth-child(even) {background-color: #c5c5c5;}
 
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label {
+  flex-basis: 150px; /* Adjust the width as needed */
+  text-align: right;
+  padding-right: 10px;
+}
+
+input, select {
+  flex-grow: 1;
+}
