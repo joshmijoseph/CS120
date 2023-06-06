@@ -41,13 +41,18 @@ select {
   width: 100px;
 }
 
-#facebook-icon,
-#twitter-icon {
+#facebook-icon {
   position: fixed;
   top: 100px;
   right: 30px;
-  font-size: 24px; 
-  color: #black;
-  display: inline-block;
-  margin-right: 10px;
+  font-size: 24px;
+  color: black;
+}
+
+#twitter-icon {
+  position: fixed;
+  top: 100px;
+  right: 60px; 
+  font-size: 24px;
+  color: black;
 }
