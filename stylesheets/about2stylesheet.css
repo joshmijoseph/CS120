@@ -17,6 +17,10 @@ h1, h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margi
   display: inline-block;
 }
 
+.list li {
+    list-style-position: inside;
+}
+
 tr:nth-child(even) {background-color: #c5c5c5;}
 
 .form-row {
