@@ -13,10 +13,7 @@ h1, h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margi
 
 .favorite-food-image {
   width: 50%;
-  height: 200px;
-  background-image: url('docs/assets/Bagels and Lox.png');
-  background-size: cover;
-  background-position: center;
+  float: left;
 }
 
 .explanatory-text {
