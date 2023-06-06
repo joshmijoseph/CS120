@@ -7,18 +7,28 @@ h1, h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margi
     align-items: center;
 }
 
+.favorite-food-image {
+  background-image: url("docs/assets/Bagels and Lox.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  float: left;
+  height: 300px; /* Adjust the height as per your image */
+}
+
+.explanatory-text {
+  margin-left: 20px;
+}
+
 .food-container {
   display: flex;
   align-items: center;
 }
 
-.favorite-food-image {
-  width: 50%;
-  float: left;
-}
-
-.explanatory-text {
-  margin-left: 20px; 
+.food-container::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .center {
