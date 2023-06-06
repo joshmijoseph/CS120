@@ -20,6 +20,7 @@ label {
   padding-right: 10px;
 }
 
-input, select {
-  flex-grow: 1;
+input[type="text"],
+select {
+    width: 200px;
 }
