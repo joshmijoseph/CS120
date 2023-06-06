@@ -2,8 +2,8 @@ title{font-family: montserrat, sans-serif; color:#000000}
 body{font-family: montserrat, sans-serif; color:#000000}
 h1, h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margin-bottom: 30px;}
 .center {
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+    align-items: center;
 }
 ol {border-style: solid; width: 10%}
 
