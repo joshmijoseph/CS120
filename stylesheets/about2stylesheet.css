@@ -15,12 +15,11 @@ tr:nth-child(even) {background-color: #c5c5c5;}
 }
 
 label {
-  flex-basis: 150px;
+  flex-basis: 150px; /* Adjust the width as needed */
   text-align: right;
   padding-right: 10px;
 }
 
-input[type="text"],
-select {
-    width: 500px;
+input, select {
+  flex-grow: 1;
 }
