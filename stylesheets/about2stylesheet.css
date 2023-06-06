@@ -5,7 +5,17 @@ h1, h2 {font-family: montserrat, sans-serif; font-size: 12; color:#000000; margi
     justify-content: center;
     align-items: center;
 }
-ol {border-style: solid; width: 10%}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  border: 1px solid black;
+  padding: 10px;
+  display: inline-block;
+}
 
 tr:nth-child(even) {background-color: #c5c5c5;}
 
