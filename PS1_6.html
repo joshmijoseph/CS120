@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count Numbers</title>
+  <style>
+    .container {
+      margin: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Count Numbers Less Than a Value</h1>
+  <div class="container"></div>
+
+  <script>
+    function count(numbers, value) {
+      var count = 0;
+      for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] < value) {
+          count++;
+        }
+      }
+      return count;
+    }
+
+    function createArrayAndCount() {
+      var numbers = [3, 55, 30, 28, 9, 12];
+      var value = 10;
+
+      var result = count(numbers, value);
+
+      alert("Count: " + result);
+    }
+
+    createArrayAndCount();
+  </script>
+</body>
+</html>
+
