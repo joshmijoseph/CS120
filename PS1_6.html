@@ -11,7 +11,9 @@
 </head>
 <body>
   <h1>Count Numbers Less Than a Value</h1>
-  <div class="container"></div>
+  <div class="container">
+    <p id="resultDisplay"></p>
+  </div>
 
   <script>
     function count(numbers, value) {
@@ -30,7 +32,8 @@
 
       var result = count(numbers, value);
 
-      alert("Count: " + result);
+      var resultDisplay = document.getElementById("resultDisplay");
+      resultDisplay.textContent = "Count: " + result;
     }
 
     createArrayAndCount();
