@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PS1_5</title>
+  <style>
+    .container {
+      margin: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Times Table</h1>
+  <div class="container">
+    <p id="timesTableDisplay"></p>
+  </div>
+
+  <script>
+      var number = parseInt(prompt("Enter a number to see its times table:"));
+
+      var timesTable = "";
+
+      for (var i = 1; i <= 12; i++) {
+        var result = number * i;
+        timesTable += number + " x " + i + " = " + result + "<br>";
+      }
+
+      var timesTableDisplay = document.getElementById("timesTableDisplay");
+      timesTableDisplay.innerHTML = timesTable;
+  </script>
+</body>
+</html>

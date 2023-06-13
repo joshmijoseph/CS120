@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PS1_4</title>
+  <style>
+    .container {
+      margin: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Odd Numbers and Sum</h1>
+  <div class="container">
+    <p id="oddNumbersDisplay"></p>
+    <p id="sumDisplay"></p>
+  </div>
+
+  <script>
+    var start = parseInt(prompt("Enter the starting number:"));
+    var end = parseInt(prompt("Enter the ending number:"));
+
+    var oddNumbers = "";
+    var sum = 0;
+
+    for (var i = start; i <= end; i++) {
+      if (i % 2 !== 0) {
+        oddNumbers += i + " ";
+        sum += i;
+      }
+    }
+
+    var oddNumbersDisplay = document.getElementById("oddNumbersDisplay");
+    var sumDisplay = document.getElementById("sumDisplay");
+
+    oddNumbersDisplay.textContent = "Odd Numbers: " + oddNumbers;
+    sumDisplay.textContent = "Sum: " + sum;
+  </script>
+</body>
+</html>

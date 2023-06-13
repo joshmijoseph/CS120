@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Sorter</title>
+  <style>
+    .container {
+        margin: 20px;
+        font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Number Sorter</h1>
+  <div class="container">
+    <p id="resultDisplay"></p>
+  </div>
+  <script>
+    var num1 = prompt("Enter the first number:");
+    var num2 = prompt("Enter the second number:");
+
+    var smallest, largest;
+    if (num1 <= num2) {
+      smallest = num1;
+      largest = num2;
+    } else {
+      smallest = num2;
+      largest = num1;
+    }
+
+    var resultDisplay = document.getElementById("resultDisplay");
+    resultDisplay.textContent = "Numbers in order: " + smallest + ", " + largest;
+  </script>
+</body>
+</html>

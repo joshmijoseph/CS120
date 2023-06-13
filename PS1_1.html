@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+ <title>PS1_1</title>
+ <style>
+    .container {
+        margin: 20px;
+    }
+    .display {
+        margin-top: 10 px;
+        font-size: 18px;
+    }
+ </style>
+</head>
+<body>
+  <h1>Questionnaire</h1>
+    <div class="container">
+      <p id="fullNameDisplay" class="display"></p>
+      <p id="childrenDisplay" class="display"></p>
+      <script>
+        var firstName = prompt("Enter your first name: ");
+        var lastName = prompt("Enter your last name: ");
+        var fullName = firstName + " " + lastName;
+        document.getElementById("fullNameDisplay").textContent = "Your name is " + fullName;
+
+        var numberChildren = prompt("How many children do you have?")
+        if (numberChildren>0){
+          document.getElementById("childrenDisplay").textContent = "You have " + numberChildren + " children";
+        } else {
+          document.getElementById("childrenDisplay").textContent = "You have no children";
+        }
+      </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <title>PS1_2</title>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <script>
+      var valueTemperature = prompt("Enter temperature in Fahrenheit: ");
+      var fahrenheit = (valueTemperature);
+      var celsius = (fahrenheit - 32) * 5/9;
+      alert("Temperature in Celsius: " + celsius.toFixed(2));
+
+      var celsiusInput = prompt("Enter temperature in Celsius: ");
+      var celsius = (celsiusInput);
+      var fahrenheit = (celsius * 9/5) +32;
+      alert("Temperature in Fahrenheit: " + fahrenheit.toFixed(2));
+    </script>
+</body>
+</html>
