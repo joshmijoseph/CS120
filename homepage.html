@@ -1,0 +1,78 @@
+<!doctype html>
+<link rel="stylesheet" href="bandwebsitestyle.css"
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: url('docs/assets/backgroundimage.png') fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: backgroundScroll 10s linear infinite;
+        }
+
+        @keyframes backgroundScroll {
+            from {background-position: 0 0;}
+            to {background-position: -400px 0;}
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="fixed-header">
+    <h1><a style="text-decoration: none" href="homepage.html">Khruangbin</a></h1>
+    <div class="navbar">
+        <a href="homepage.html">Home</a>
+        <a href="media.html">Media</a>
+        <a href="theteam.html">Team</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+<div id="horizontal"></div>
+<div class="main">
+    <table>
+        <tr>
+            <th>Upcoming Tour Dates</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>June 21 2023</td>
+            <td>Melbourne Australia</td>
+        </tr>
+        <tr>
+            <td>July 13 2023</td>
+            <td>Boston, Massachussets</td>
+        </tr>
+        <tr>
+            <td>August 3 2023</td>
+            <td>Manhattan, New York</td>
+        </tr>
+        <tr>
+            <td>September 4 2023</td>
+            <td>Chicago, Illinois</td>
+    </table>
+</div>
+
+
+<div class="footer">
+    &copy; 2023 Khurangbin. All rights reserved.
+</div>
+
+</body>
+</html>
