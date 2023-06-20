@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PS2_5</title>
+  <script>
+    window.onload = function() {
+      var items = ["Scarf", "Shirt", "Shoes", "Shorts", "Pants"];
+      var prices = [10, 20, 30, 40, 50];
+      var orderItems = [];
+      var totalCost = 0;
+
+      var dropdown = document.getElementById("itemsDropdown");
+      for (var i = 0; i < items.length; i++) {
+        var option = document.createElement("option");
+        option.value = i;
+        option.text = items[i];
+        dropdown.appendChild(option);
+      }
+
+      var addButton = document.getElementById("addButton");
+      addButton.addEventListener("click", function() {
+        var quantityInput = document.getElementById("quantityInput");
+        var quantity = parseInt(quantityInput.value);
+        if (isNaN(quantity) || quantity < 1 || quantity > 100) {
+          alert("Please enter a valid quantity between 1 and 100.");
+          return;
+        }
+
+        var itemIndex = dropdown.value;
+        var itemName = items[itemIndex];
+        var itemPrice = prices[itemIndex];
+        var itemTotal = quantity * itemPrice;
+
+        orderItems.push({
+          name: itemName,
+          quantity: quantity,
+          price: itemPrice,
+          total: itemTotal
+        });
+
+        totalCost += itemTotal;
+        updateOrderDisplay();
+      });
+
+      var startOverButton = document.getElementById("startOverButton");
+      startOverButton.addEventListener("click", function() {
+        orderItems = [];
+        totalCost = 0;
+        updateOrderDisplay();
+      });
+
+      function updateOrderDisplay() {
+        var orderDisplay = document.getElementById("orderDisplay");
+        orderDisplay.innerHTML = "";
+
+        for (var i = 0; i < orderItems.length; i++) {
+          var item = orderItems[i];
+          var itemInfo = document.createElement("p");
+          itemInfo.innerText = item.quantity + " of " + item.name + " - $" + item.total;
+          orderDisplay.appendChild(itemInfo);
+        }
+
+        var totalInfo = document.createElement("p");
+        totalInfo.innerText = "Total: $" + totalCost;
+        orderDisplay.appendChild(totalInfo);
+      }
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label for="itemsDropdown">Select an item:</label>
+    <select id="itemsDropdown"></select>
+    <br><br>
+    <label for="quantityInput">Quantity:</label>
+    <input type="number" id="quantityInput" min="1" max="100">
+    <button type="button" id="addButton">Add</button>
+  </form>
+  <br>
+  <div id="orderDisplay"></div>
+  <br>
+  <button type="button" id="startOverButton">Start Over</button>
+</body>
+</html>
