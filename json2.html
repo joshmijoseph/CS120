@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.get("json2.json", function(data) {
+                var songs = data.songs;
+
+                for (var i = 0; i < songs.length; i++) {
+                    var song = songs[i];
+                    var title = song.title;
+                    var artist = song.artist;
+                    var genres = song.genres.join(", ");
+                    var year = song.year;
+
+                    var songInfo = "Title: " + title + "<br>" +
+                                   "Artist: " + artist + "<br>" +
+                                   "Genre: " + genres + "<br>" +
+                                   "Released: " + year + "<br><br>";
+
+                    document.write(songInfo);
+                }
+            });
+        });
+    </script>
+</head>
+</html>

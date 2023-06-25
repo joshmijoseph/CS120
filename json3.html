@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Song List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.get("json2.json", function(data) {
+                var songs = data.songs;
+                var genres = [];
+
+                for (var i = 0; i < songs.length; i++) {
+                    var songGenres = songs[i].genres;
+                    for (var j = 0; j < songGenres.length; j++) {
+                        if (!genres.includes(songGenres[j])) {
+                            genres.push(songGenres[j]);
+                        }
+                    }
+                }
+
+                var genreSelect = $("#genre-select");
+                for(var k = 0; k <genres.length; k++) {
+                    genreSelect.append("<option value='" + genres[k] + "'>" + genres[k] + "</option>");
+                }
+            });
+
+            $("#filter-button").click(function() {
+                var selectedGenre = $("#genre-select").val();
+
+                $.get("json2.json", function(data) {
+                    var songs = data.songs;
+                    var filteredSongs = songs.filter(function(song) {
+                        return song.genres.includes(selectedGenre);
+                    });
+
+                    var songTitles = "";
+                    for (var i = 0; i < filteredSongs.length; i++) {
+                        songTitles += filteredSongs[i].title + "<br>";
+                    }
+                    $("#song-titles").html(songTitles);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Song List</h1>
+    <form>
+        <label for="genre-select">Select Genre:</label>
+        <select id="genre-select"></select>
+        <button type="button" id="filter-button">Filter</button>
+    </form>
+    <div id="song-titles"></div>
+</body>
+</html>
