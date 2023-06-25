@@ -59,7 +59,7 @@
         {
             "title": "Maria Tambien",
             "artist": "Khruangbin",
-            "genres": "Alternative/Indie",
+            "genres": ["Alternative/Indie"],
             "year": 2018
         },
 
