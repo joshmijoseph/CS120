@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UK Bank Holidays</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>UK Bank Holidays</h1>
+
+    <div id="result-ajax"></div>
+    <div id="result-fetch"></div>
+
+
+    <div id="api-description">
+      <h2>Overview</h2>
+      <p>
+        The API used in this example is the UK Government Bank Holidays API. It provides data about bank holidays in the United Kingdom. <br>The API offers information such as the dates of bank holidays and their titles.
+      </p>
+      <p>
+        You can find more information about this API on the
+        <a href="https://www.gov.uk/bank-holidays" target="_blank">UK Government website</a>.
+      </p>
+      <p>
+        The URL for the API request is the end point that provides the bank holiday. The method used for the AJAX request is GET which was used to retrieve the data from the server. <br> By making a GET request to the specified URL, the API provides the bank holiday data in JSON format, which is then displayed on the web page.
+      </p>
+      <p>
+        This API can be helpful in various applications, including:
+      </p>
+      <ul>
+        <li>
+          <strong>Travel Planning:</strong> Travel agencies or individuals planning trips within the United Kingdom can use this API to check for upcoming bank holidays. This information can help them plan their travel itineraries, accommodations, and avoid any potential disruptions during holidays.
+        </li>
+        <li>
+          <strong>Business Operations:</strong> Companies operating in the United Kingdom can leverage this API to manage their operations effectively. For instance, businesses can adjust employee schedules and staffing levels based on the bank holiday calendar. It enables them to plan ahead and ensure smooth operations during holidays.
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      $.ajax({
+        url: "https://www.gov.uk/bank-holidays.json",
+        method: "GET",
+        dataType: "json",
+        success: function(data) {
+          displayBankHolidays(data);
+        },
+        error: function(error) {
+          console.log(error);
+        }
+      });
+
+      function displayBankHolidays(data) {
+        var bankHolidays = data["england-and-wales"].events;
+
+        var html = "";
+        for (var i = 0; i < bankHolidays.length; i++) {
+          var holiday = bankHolidays[i];
+          html += "<h3>" + holiday.title + "</h3>";
+          html += "<p>Date: " + holiday.date + "</p>";
+          html += "<hr>";
+        }
+
+        $("#result-ajax").html(html);
+      }
+
+      fetch("https://www.gov.uk/bank-holidays.json")
+        .then(response => response.json())
+        .then(data => {
+          displayBankHolidaysFetch(data);
+        })
+        .catch(error => console.log(error));
+
+      function displayBankHolidaysFetch(data) {
+        var bankHolidays = data["england-and-wales"].events;
+
+        var html = "";
+        for (var i = 0; i < bankHolidays.length; i++) {
+          var holiday = bankHolidays[i];
+          html += "<h3>" + holiday.title + "</h3>";
+          html += "<p>Date: " + holiday.date + "</p>";
+          html += "<hr>";
+        }
+
+        document.getElementById("result-fetch").innerHTML = html;
+      }
+    </script>
+  </body>
+</html>
